@@ -36,7 +36,6 @@ int Player::getNumber()
 
 void Player::showNumber()
 {
-	hit();
 	cout << Name << "の手は＝＞" << getNumber() << endl;
 }
 

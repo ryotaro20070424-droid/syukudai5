@@ -10,12 +10,14 @@ int main()
 	cout << "名前を入力してください＝＞";
 	cin >> name1;
 	Player player1(name1);
+	player1.hit();
 	player1.showNumber();
 
 	char name2[30];
 	cout << "名前を入力してください＝＞";
 	cin >> name2;
 	Player player2(name2);
+	player2.hit();
 	player2.showNumber();
 
 	int num1 = player1.getNumber();
