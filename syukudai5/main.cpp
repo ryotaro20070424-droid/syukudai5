@@ -14,13 +14,18 @@ int main()
 	char name1[30];
 	cout << "名前を入力してください＝＞";
 	cin >> name1;
-	Player player1(name1);
-	player1.hit(&shoe);
-	player1.ShowPNumber();
+	int check = 54;
+	do
+	{
+		Player player1(name1);
+		player1.hit(&shoe);
+		player1.ShowPNumber();
 
-	Dealer dealer;
-	dealer.hit(&shoe);
-	dealer.ShowDNumber();
+		Dealer dealer;
+		dealer.hit(&shoe);
+		dealer.ShowDNumber();
 
-	judge(player1.getNumber(), dealer.getNumber(), name1);
+		judge(player1.getNumber(), dealer.getNumber(), name1);
+		check--;
+	} while (check != 0);
 }
