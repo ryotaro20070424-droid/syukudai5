@@ -1,5 +1,6 @@
 ﻿#include<iostream>
 #include"Player.h"
+#include "Participant.h"
 using namespace std;
 
 const char* sort[]
@@ -15,7 +16,7 @@ void initRand()
 	srand((unsigned int)time(nullptr));
 };
 
-void judge(int num1, int num2, const char* name1, const char* name2)
+void judge(int num1, int num2, const char* name1)
 {
 	if (num1 == num2)
 	{
@@ -27,7 +28,7 @@ void judge(int num1, int num2, const char* name1, const char* name2)
 	}
 	else
 	{
-		cout << name2 << "の勝ち" << endl;
+		cout << "Dealerの勝ち" << endl;
 	}
 }
 
@@ -37,4 +38,9 @@ void Inicards(int* cards)
 	{
 		cards[i] = (i / 13 + 1) * 100 + (i % 13 + 1);
 	}
+}
+
+void ShowCardType(Participant* participant)
+{
+	cout << sort[participant->getsort()] << endl;
 }

@@ -1,14 +1,12 @@
 ﻿#pragma once
 
-class Player
+#include "Participant.h"
+
+class Player:public Participant
 {
 private:
 	char Name[20];
-	int Cardnum;
 public:
 	Player(const char* name);
-	void hit(int* pcard);
-	int getNumber();
-	int getsort();
-	void showNumber();
+	void ShowPNumber();
 };
