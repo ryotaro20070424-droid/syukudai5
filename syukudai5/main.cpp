@@ -11,6 +11,7 @@ int main()
 	initRand();
 	Shoe shoe;
 
+
 	int check = 0;
 	int NumberOfPeople = 2;
 	Player* players = new Player[NumberOfPeople];
