@@ -5,5 +5,5 @@ class Dealer : public Participant
 {
 public:
 	void ShowDNumber();
-	void hit(Shoe* shoe);
+	void hit(Shoe* shoe)override;
 };

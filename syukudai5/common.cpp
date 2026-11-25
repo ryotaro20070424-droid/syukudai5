@@ -16,20 +16,29 @@ void initRand()
 	srand((unsigned int)time(nullptr));
 };
 
-void judge(int num1, int num2, const char* name1)
+void judge(int num1, Player* player,int size)
 {
-	if (num1 == num2)
+	int Playermax = player[0].getNumber();
+	int Namenum = 0;
+	for (int i = 1;i < size;i++)
 	{
-		cout << "引き分け" << endl;
+		if (Playermax <= player[i].getNumber())
+		{
+			Playermax = player[i].getNumber();
+			Namenum = i;
+		}
 	}
-	else if (num1 > num2)
-	{
-		cout << name1 << "の勝ち" << endl;
-	}
-	else
+	
+	if (num1 >= Playermax)
 	{
 		cout << "Dealerの勝ち" << endl;
 	}
+	else
+	{
+		player[Namenum].ShowName();
+		cout << "の勝ち" << endl;
+	}
+	cout << "============================" << endl;
 }
 
 void Inicards(int* cards)

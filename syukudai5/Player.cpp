@@ -4,9 +4,9 @@
 #include"Participant.h"
 using namespace std;
 
-Player::Player(const char* name)
+Player::Player()
 {
-	strcpy_s(Name, sizeof(Name), name);
+	strcpy_s(Name, sizeof(Name), "Player");
 	Cardnum = 0;
 }
 
@@ -18,4 +18,14 @@ void Player::ShowPNumber()
 void Player::hit(Shoe* shoe)
 {
 	Cardnum = shoe->Takecard();
+}
+
+void Player::SetName(const char* name)
+{
+	strcpy_s(Name, sizeof(Name), name);
+}
+
+void Player::ShowName()
+{
+	cout << Name;
 }

@@ -11,10 +11,17 @@ int main()
 	initRand();
 	Shoe shoe;
 
-	char name1[30];
 	int check = 0;
-	cout << "名前を入力してください＝＞";
-	cin >> name1;
+	int NumberOfPeople = 2;
+	Player* players = new Player[NumberOfPeople];
+	cout << "============================" << endl;
+	for (int i = 0;i < NumberOfPeople;i++)
+	{
+		char name[20];
+		cout << i + 1 << "人目の名前を入れてね" << endl;
+		cin >> name;
+		players[i].SetName(name);
+	}
 	cout << "何回やりますか？" << endl << "=>";
 	cin >> check;
 	if (check >= 100)
@@ -29,15 +36,19 @@ int main()
 	}
 	do
 	{
-		Player player1(name1);
-		player1.hit(&shoe);
-		player1.ShowPNumber();
+		for (int i = 0;i < NumberOfPeople;i++)
+		{
+			players[i].hit(&shoe);
+			players[i].ShowPNumber();
+		}
 
 		Dealer dealer;
 		dealer.hit(&shoe);
 		dealer.ShowDNumber();
 
-		judge(player1.getNumber(), dealer.getNumber(), name1);
+		judge(dealer.getNumber(), &players[0],NumberOfPeople);
 		check--;
 	} while (check != 0);
+	delete[] players;
+	players = nullptr;
 }
