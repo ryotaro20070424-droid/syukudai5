@@ -7,7 +7,7 @@ class Participant
 protected:
 	int Cardnum;
 public:
-	void hit(Shoe* shoe);
+	virtual void hit(Shoe* shoe) = 0;
 	int getNumber();
 	int getsort();
 };

@@ -5,11 +5,6 @@
 #include"Shoe.h"
 using namespace std;
 
-void Participant::hit(Shoe* shoe)
-{
-	Cardnum = shoe->Takecard();
-}
-
 int Participant::getNumber()
 {
 	return Cardnum % 100;

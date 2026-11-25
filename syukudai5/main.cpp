@@ -12,9 +12,21 @@ int main()
 	Shoe shoe;
 
 	char name1[30];
+	int check = 0;
 	cout << "名前を入力してください＝＞";
 	cin >> name1;
-	int check = 54;
+	cout << "何回やりますか？" << endl << "=>";
+	cin >> check;
+	if (check >= 100)
+	{
+		cout << "さすがに多すぎ100回にするね" << endl;
+		check = 100;
+	}
+	else if (check < 0)
+	{
+		cout << "おしまい" << endl;
+		check = 0;
+	}
 	do
 	{
 		Player player1(name1);

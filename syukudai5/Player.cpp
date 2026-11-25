@@ -14,3 +14,8 @@ void Player::ShowPNumber()
 {
 	cout << Name << "の手は＝＞" << sort[getsort()] << "の" << getNumber() << endl;
 }
+
+void Player::hit(Shoe* shoe)
+{
+	Cardnum = shoe->Takecard();
+}

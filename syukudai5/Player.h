@@ -9,4 +9,5 @@ private:
 public:
 	Player(const char* name);
 	void ShowPNumber();
+	void hit(Shoe* shoe);
 };

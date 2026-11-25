@@ -10,3 +10,13 @@ void Dealer::ShowDNumber()
 {
 	cout << "Dealerの手は＝＞" << sort[getsort()] << "の" << getNumber() << endl;
 }
+
+void Dealer::hit(Shoe* shoe)
+{
+	int a = shoe->Takecard();
+	int b = shoe->Takecard();
+	if (a >= b)
+		Cardnum = a;
+	else
+		Cardnum = b;
+}
